@@ -20,3 +20,5 @@ TET_RESULTS_DIR?=	results
 
 # The temporary directory used by TET.
 TET_TMP_DIR?=		tet_tmp_dir
+
+.include <bsd.obj.mk>

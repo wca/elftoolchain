@@ -13,3 +13,5 @@ clean cleandepend depend:
 .for plugin in ${PLUGINS}
 	${MAKE} -f Makefile.${plugin} ${.TARGET}
 .endfor
+
+.include <bsd.obj.mk>
