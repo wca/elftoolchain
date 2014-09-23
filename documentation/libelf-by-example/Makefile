@@ -21,8 +21,8 @@ check-example-syntax: .PHONY
 	@c=$$(basename ${f} .txt).c; sed -e 's/@[^@]*@//' \
 		${.CURDIR}/${f} > ${.OBJDIR}/$${c}; \
 	echo -n $${c} ' '; cc -I${.CURDIR}/${TOP}/common \
-		-I${.CURDIR}/${TOP}/libelf ${.OBJDIR}/$${c} \
-		-L${.CURDIR}/${TOP}/libelf -lelf ${EXTRA_LIBS} && \
+		-I${TOP}/libelf ${.OBJDIR}/$${c} \
+		-L${TOP}/libelf -lelf ${EXTRA_LIBS} && \
 		rm ${.OBJDIR}/$${c} a.out
 .endfor
 	@echo
