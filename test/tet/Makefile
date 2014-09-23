@@ -4,9 +4,10 @@
 # $Id$
 #
 
-TOP=	${.CURDIR}/../..
+RELPATH=	../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-.include "${TOP}/mk/elftoolchain.tetvars.mk"
+.include "${SRCTOP}/mk/elftoolchain.tetvars.mk"
 
 TET_BUILD_MARKER=	.tet-build-done
 TET_PATCH_MARKER=	.tet-patch-done

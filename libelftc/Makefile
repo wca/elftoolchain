@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 LIB=	elftc
 
@@ -58,8 +59,8 @@ MLINKS=	elftc_bfd_find_target.3 elftc_bfd_target_byteorder.3 \
 
 .if	!make(clean) && !make(clobber)
 .BEGIN:	.SILENT
-	${.CURDIR}/make-toolchain-version -t ${TOP} -r ${RELEASE} \
+	${.CURDIR}/make-toolchain-version -t ${SRCTOP} -r ${RELEASE} \
 	    -h ${OS_HOST}
 .endif
 
-.include "${TOP}/mk/elftoolchain.lib.mk"
+.include "${SRCTOP}/mk/elftoolchain.lib.mk"

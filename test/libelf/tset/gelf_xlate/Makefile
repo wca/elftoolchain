@@ -1,8 +1,9 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-TS_SRCS=		xlate.m4
-TS_YAML=		xlate
+TS_SRCS=	xlate.m4
+TS_YAML=	xlate
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

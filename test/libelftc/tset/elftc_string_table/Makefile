@@ -1,9 +1,10 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 TS_SRCS=	string_table.m4
 
 LDADD+=	-L${LIBELF} -lelf
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

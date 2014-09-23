@@ -1,7 +1,8 @@
 # $Id$
 
-TOP=		${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-SUBDIR=		libelf-by-example
+SUBDIR=	libelf-by-example
 
-.include "${TOP}/mk/elftoolchain.subdir.mk"
+.include "${SRCTOP}/mk/elftoolchain.subdir.mk"

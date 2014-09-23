@@ -1,9 +1,10 @@
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 PROG=	brandelf
 WARNS?=	6
 LDADD=	-lelftc -lelf
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"

@@ -3,7 +3,8 @@
 # TET-based test suites used by the Elftoolchain project.
 #
 
-TOP=		${.CURDIR}/..
+RELPATH=	..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 # Build TET first.
 SUBDIR+=	tet
@@ -20,7 +21,7 @@ SUBDIR+=	elfdump
 SUBDIR+=	nm
 
 .if !make(install)
-.include "$(TOP)/mk/elftoolchain.subdir.mk"
+.include "${SRCTOP}/mk/elftoolchain.subdir.mk"
 .else
 install:	.SILENT .PHONY
 	echo Nothing to install.

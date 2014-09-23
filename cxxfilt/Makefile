@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 PROG=	c++filt
 SRCS=	cxxfilt.c
@@ -12,4 +13,4 @@ LDADD=	-lelftc -lelf
 
 MAN1=	c++filt.1
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"

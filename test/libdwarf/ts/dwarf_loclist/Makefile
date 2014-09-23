@@ -1,8 +1,9 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 TS_SRCS=	dwarf_loclist.c
 TS_DATA=	dt32-g1 dt64-g1 ec32-g1 ec64-g1
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

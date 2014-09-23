@@ -1,8 +1,9 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-TS_SRCS=		fsize.m4
-TS_DATA=		fsize.msb32 fsize.msb64
+TS_SRCS=	fsize.m4
+TS_DATA=	fsize.msb32 fsize.msb64
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

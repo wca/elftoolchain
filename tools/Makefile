@@ -1,14 +1,13 @@
 # $Id$
 
-TOP=		${.CURDIR}/..
+RELPATH=	..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-.include "${TOP}/mk/elftoolchain.os.mk"
-
-SUBDIR=
+.include "${SRCTOP}/mk/elftoolchain.os.mk"
 
 .if defined(MKNOWEB) && ${MKNOWEB} == "yes" && exists(${NOWEB}) && \
     exists(${PDFLATEX})
-SUBDIR+=		build-automation
+SUBDIR+=	build-automation
 .endif
 
-.include "${TOP}/mk/elftoolchain.subdir.mk"
+.include "${SRCTOP}/mk/elftoolchain.subdir.mk"

@@ -2,7 +2,8 @@
 # $Id$
 #
 
-TOP=		${.CURDIR}/../../..
+RELPATH=	../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 SUBDIR+=	common		# must be first
 
@@ -57,4 +58,4 @@ SUBDIR+=	gelf_getehdr
 SUBDIR+=	gelf_newehdr
 SUBDIR+=	gelf_xlate
 
-.include "${TOP}/mk/elftoolchain.subdir.mk"
+.include "${SRCTOP}/mk/elftoolchain.subdir.mk"

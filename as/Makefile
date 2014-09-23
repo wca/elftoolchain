@@ -1,14 +1,15 @@
 # $Id$
 
-TOP=		${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-PROG=		as
-SRCS=		as.c
+PROG=	as
+SRCS=	as.c
 
 LSRC=
 YSRC=
-LDADD=		-lelftc
+LDADD=	-lelftc
 
-MAN=		as.1
+MAN=	as.1
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"

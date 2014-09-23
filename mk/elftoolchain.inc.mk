@@ -3,11 +3,8 @@
 #
 # $Id$
 
-.if !defined(TOP)
-.error	Make variable \"TOP\" has not been defined.
-.endif
-
-.include "${TOP}/mk/elftoolchain.os.mk"
+.include "${SRCTOP}/mk/elftoolchain.base.mk"
+.include "${SRCTOP}/mk/elftoolchain.os.mk"
 
 .include <bsd.own.mk>
 

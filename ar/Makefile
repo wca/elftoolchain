@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 PROG=	ar
 SRCS=	ar.c read.c util.c write.c
@@ -27,7 +28,7 @@ all:	${EXTRA_TARGETS}
 ${EXTRA_TARGETS}:	${PROG}
 	ln -s ${PROG} ${.TARGET}
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"
 
 .if ${OS_HOST} == "OpenBSD"
 CFLAGS+=	-I/usr/local/include

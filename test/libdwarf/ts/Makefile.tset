@@ -1,6 +1,6 @@
 # $Id$
 
-.include "${TOP}/mk/elftoolchain.os.mk"
+.include "${SRCTOP}/mk/elftoolchain.os.mk"
 
 # libdwarf test suite uses libdwarf in /usr/local (i.e. SGI libdwarf),
 # if TCGEN is defined.

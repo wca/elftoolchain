@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 PROG=	isa
 SRCS=	isa.c
@@ -17,4 +18,4 @@ check-specifications:	.PHONY
 	${.OBJDIR}/${PROG} -n --query ${f}
 .endfor
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"

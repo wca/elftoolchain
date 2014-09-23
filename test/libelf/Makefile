@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=		${.CURDIR}/../..
+RELPATH=	../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 SUBDIR=		tset
 
-.include "${TOP}/mk/elftoolchain.tetbase.mk"
+.include "${SRCTOP}/mk/elftoolchain.tetbase.mk"

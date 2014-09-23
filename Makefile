@@ -1,8 +1,9 @@
 # $Id$
 
-TOP=	${.CURDIR}/.
+RELPATH=.
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-.include "${TOP}/mk/elftoolchain.os.mk"
+.include "${SRCTOP}/mk/elftoolchain.os.mk"
 
 # Build configuration information first.
 SUBDIR += common
@@ -42,7 +43,7 @@ SUBDIR += test
 SUBDIR += documentation
 .endif
 
-.include "${TOP}/mk/elftoolchain.subdir.mk"
+.include "${SRCTOP}/mk/elftoolchain.subdir.mk"
 
 #
 # Special top-level targets.

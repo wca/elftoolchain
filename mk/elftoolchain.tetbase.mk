@@ -3,11 +3,8 @@
 # Convenience rules for the top level directory containing a TET-based test
 # suite.
 
-.if !defined(TOP)
-.error Make variable \"TOP\" has not been defined.
-.endif
-
-.include "${TOP}/mk/elftoolchain.tetvars.mk"
+.include "${SRCTOP}/mk/elftoolchain.base.mk"
+.include "${SRCTOP}/mk/elftoolchain.tetvars.mk"
 
 .MAIN: all
 .PHONY:	clobber execute tccbuild tccclean test
@@ -42,5 +39,5 @@ clobber:	clean
 # Ensure that a 'make test' does not recurse further into the test suite's
 # directory hierarchy.
 .if !make(test)
-.include "${TOP}/mk/elftoolchain.subdir.mk"
+.include "${SRCTOP}/mk/elftoolchain.subdir.mk"
 .endif

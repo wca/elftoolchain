@@ -1,8 +1,9 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-TS_SRCS=		getarhdr.m4
+TS_SRCS=	getarhdr.m4
 
 # These names must match those in the test case code.
 TS_DATA=		a.ar a-bsd.ar a1.o a2.o
@@ -26,4 +27,4 @@ a-bsd.ar: a.ar .SILENT
 	${ELFTOOLCHAIN_AR} -F bsd -crv ${.TARGET} s1 a1.o ${TS_LONGNAME} \
 		a2.o "s 3" > /dev/null
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

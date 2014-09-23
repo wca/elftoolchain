@@ -1,8 +1,9 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-TS_SRCS=		getarsym.m4
+TS_SRCS=	getarsym.m4
 
 # These names must match those in the test case code.
 TS_DATA=		a.ar a-bsd.ar a2.ar a2-bsd.ar a1.o a2.o
@@ -37,4 +38,4 @@ a2-bsd.ar:	a2.ar .SILENT
 	rm -f ${.TARGET}
 	${ELFTOOLCHAIN_AR} -F bsd -crv ${.TARGET} ${.ALLSRC} > /dev/null
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

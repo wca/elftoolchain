@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 LIB=	dwarf
 
@@ -334,4 +335,4 @@ dwarf_pro_funcs.c:	dwarf_pro_nametbl.m4 dwarf_pro_funcs.m4
 dwarf_pro_types.c:	dwarf_pro_nametbl.m4 dwarf_pro_types.m4
 dwarf_pro_vars.c:	dwarf_pro_nametbl.m4 dwarf_pro_vars.m4
 
-.include "${TOP}/mk/elftoolchain.lib.mk"
+.include "${SRCTOP}/mk/elftoolchain.lib.mk"

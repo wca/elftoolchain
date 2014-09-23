@@ -1,8 +1,9 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-TS_SRCS=		update.m4
-TS_YAML=		newehdr newscn newscn2 rdwr rdwr1 rdwr2 u1
+TS_SRCS=	update.m4
+TS_YAML=	newehdr newscn newscn2 rdwr rdwr1 rdwr2 u1
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

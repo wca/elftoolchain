@@ -3,38 +3,35 @@
 #
 # $Id$
 
-.if !defined(TOP)
-.error	Make variable \"TOP\" has not been defined.
-.endif
+.include "${SRCTOP}/mk/elftoolchain.base.mk"
+.include "${SRCTOP}/mk/elftoolchain.os.mk"
 
-.include "${TOP}/mk/elftoolchain.os.mk"
-
-LIBDWARF?=	${TOP}/libdwarf
-LIBELF?=	${TOP}/libelf
-LIBELFTC?=	${TOP}/libelftc
+LIBDWARF?=	${OBJTOP}/libdwarf
+LIBELF?=	${OBJTOP}/libelf
+LIBELFTC?=	${OBJTOP}/libelftc
 
 BINDIR?=	/usr/bin
 
-CFLAGS+=	-I. -I${.CURDIR} -I${TOP}/common
+CFLAGS+=	-I. -I${.CURDIR} -I${SRCTOP}/common
 CLEANFILES+=	.depend
 
 .if defined(LDADD)
 _LDADD_LIBDWARF=${LDADD:M-ldwarf}
 .if !empty(_LDADD_LIBDWARF)
-CFLAGS+= -I${TOP}/libdwarf
-LDFLAGS+= -L${TOP}/libdwarf
+CFLAGS+= -I${SRCTOP}/libdwarf
+LDFLAGS+= -L${OBJTOP}/libdwarf
 .endif
 
 _LDADD_LIBELF=${LDADD:M-lelf}
 .if !empty(_LDADD_LIBELF)
-CFLAGS+= -I${TOP}/libelf
-LDFLAGS+= -L${TOP}/libelf
+CFLAGS+= -I${SRCTOP}/libelf
+LDFLAGS+= -L${OBJTOP}/libelf
 .endif
 
 _LDADD_LIBELFTC=${LDADD:M-lelftc}
 .if !empty(_LDADD_LIBELFTC)
-CFLAGS+= -I${TOP}/libelftc
-LDFLAGS+= -L${TOP}/libelftc
+CFLAGS+= -I${SRCTOP}/libelftc
+LDFLAGS+= -L${OBJTOP}/libelftc
 .endif
 .endif
 
@@ -73,7 +70,7 @@ ${_L:R}.o:	${_Y:R}.h
 .include <bsd.prog.mk>
 
 # Note: include the M4 ruleset after bsd.prog.mk.
-.include "${TOP}/mk/elftoolchain.m4.mk"
+.include "${SRCTOP}/mk/elftoolchain.m4.mk"
 
 # Support a 'clobber' target.
 clobber:	clean os-specific-clobber .PHONY
@@ -83,4 +80,4 @@ CFLAGS:=	${CFLAGS:N-O*} -g
 .endif
 
 # Bring in rules related to test code.
-.include "${TOP}/mk/elftoolchain.test.mk"
+.include "${SRCTOP}/mk/elftoolchain.test.mk"

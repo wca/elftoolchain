@@ -2,11 +2,8 @@
 # $Id$
 #
 
-.if !defined(TOP)
-.error	Make variable \"TOP\" has not been defined.
-.endif
-
-.include "${TOP}/mk/elftoolchain.os.mk"
+.include "${SRCTOP}/mk/elftoolchain.base.mk"
+.include "${SRCTOP}/mk/elftoolchain.os.mk"
 
 .include <bsd.lib.mk>
 
@@ -19,18 +16,18 @@ CLEANFILES+=	.depend
 # Adjust CFLAGS
 CFLAGS+=	-I.			# OBJDIR
 CFLAGS+=	-I${.CURDIR}		# Sources
-CFLAGS+=	-I${TOP}/common		# common code
+CFLAGS+=	-I${SRCTOP}/common		# common code
 
 .if defined(LDADD)
 _LDADD_LIBELF=${LDADD:M-lelf}
 .if !empty(_LDADD_LIBELF)
-CFLAGS+=	-I${TOP}/libelf
-LDFLAGS+=	-L${TOP}/libelf
+CFLAGS+=	-I${SRCTOP}/libelf
+LDFLAGS+=	-L${OBJTOP}/libelf
 .endif
 .endif
 
 # Note: include the M4 ruleset after bsd.lib.mk.
-.include "${TOP}/mk/elftoolchain.m4.mk"
+.include "${SRCTOP}/mk/elftoolchain.m4.mk"
 
 .if defined(DEBUG)
 CFLAGS:=	${CFLAGS:N-O*} -g
@@ -61,4 +58,4 @@ ${DESTDIR}${INCSDIR}/${inc}: ${inc}
 .endif	# OpenBSD
 
 # Bring in rules related to test code.
-.include "${TOP}/mk/elftoolchain.test.mk"
+.include "${SRCTOP}/mk/elftoolchain.test.mk"

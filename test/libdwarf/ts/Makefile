@@ -2,7 +2,8 @@
 # $Id$
 #
 
-TOP=		${.CURDIR}/../../..
+RELPATH=	../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 SUBDIR+=	dwarf_init
 SUBDIR+=	dwarf_next_cu_header
@@ -24,4 +25,4 @@ SUBDIR+=	dwarf_pubnames
 SUBDIR+=	dwarf_macinfo
 SUBDIR+=	dwarf_ranges
 
-.include "${TOP}/mk/elftoolchain.subdir.mk"
+.include "${SRCTOP}/mk/elftoolchain.subdir.mk"

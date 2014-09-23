@@ -3,11 +3,8 @@
 # Rules for handling TET based test suites.
 #
 
-.if !defined(TOP)
-.error Make variable \"TOP\" has not been defined.
-.endif
-
-.include "${TOP}/mk/elftoolchain.tetvars.mk"
+.include "${SRCTOP}/mk/elftoolchain.base.mk"
+.include "${SRCTOP}/mk/elftoolchain.tetvars.mk"
 
 # Inform make(1) about the suffixes we use.
 .SUFFIXES: .lsb32 .lsb64 .msb32 .msb64 .yaml
@@ -15,7 +12,7 @@
 TS_ROOT?=	${.CURDIR:H}
 TS_OBJROOT?=	${.OBJDIR:H}
 
-TS_BASE=	${TOP}/test/tet
+TS_BASE=	${SRCTOP}/test/tet
 
 TET_LIBS=	${TET_ROOT}/lib/tet3
 TET_OBJS=	${TET_LIBS}/tcm.o
@@ -57,11 +54,11 @@ ${_TC_SRC}:	${_TS_OBJS}
 # M4->C translation.
 M4FLAGS+=	-I${TS_ROOT}/common -I${TS_BASE}/common
 
-.include "${TOP}/mk/elftoolchain.m4.mk"
+.include "${SRCTOP}/mk/elftoolchain.m4.mk"
 
 LDADD+=		${TET_OBJS} -L${TET_LIBS} -lapi
 CLEANFILES+=	tet_xres tet_captured
 
-ELFTOOLCHAIN_AR=	${TOP}/ar/ar
+ELFTOOLCHAIN_AR=	${SRCTOP}/ar/ar
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"

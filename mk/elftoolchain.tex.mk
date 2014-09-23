@@ -4,7 +4,8 @@
 # $Id$
 #
 
-.include "${TOP}/mk/elftoolchain.os.mk"
+.include "${SRCTOP}/mk/elftoolchain.base.mk"
+.include "${SRCTOP}/mk/elftoolchain.os.mk"
 
 .if defined(MKTEX) && ${MKTEX} == "yes" && exists(${MPOST}) && exists(${PDFLATEX})
 

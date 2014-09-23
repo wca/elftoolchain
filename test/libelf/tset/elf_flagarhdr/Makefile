@@ -1,11 +1,12 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-TS_SRCS=		flagarhdr.m4
+TS_SRCS=	flagarhdr.m4
 
-TS_DATA=		a.ar
-CLEANFILES+=		a1
+TS_DATA=	a.ar
+CLEANFILES+=	a1
 
 a1:	.SILENT
 	echo "a1" > ${.TARGET}
@@ -13,4 +14,4 @@ a1:	.SILENT
 a.ar:	a1 .SILENT
 	${AR} crv ${.TARGET} a1 > /dev/null
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

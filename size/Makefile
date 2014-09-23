@@ -1,11 +1,12 @@
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 PROG=   size
 WARNS?= 6
 LDADD=  -lelftc -lelf
 DPADD=	${LIBELFTC} ${LIBELF}
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"
 

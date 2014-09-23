@@ -4,7 +4,8 @@
 
 # Pass down 'test' as a valid target.
 
-.include "$(TOP)/mk/elftoolchain.os.mk"
+.include "${SRCTOP}/mk/elftoolchain.base.mk"
+.include "$(SRCTOP)/mk/elftoolchain.os.mk"
 
 .if ${OS_HOST} == DragonFly
 clobber test:: _SUBDIR

@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 YAML_FILES=	check_elf \
 		getclass \
@@ -33,4 +34,4 @@ CLEANFILES+=	${_YAML_ELF}
 
 all:	${_YAML_ELF}
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

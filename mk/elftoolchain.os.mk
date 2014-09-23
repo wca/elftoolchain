@@ -9,9 +9,11 @@
 # Determine the host operating system flavor.
 OS_HOST != uname -s
 
+.include "${SRCTOP}/mk/elftoolchain.base.mk"
+
 # Bring in OS-specific Makefiles, if they exist
-.if exists(${TOP}/mk/os.${OS_HOST}.mk)
-.include "${TOP}/mk/os.${OS_HOST}.mk"
+.if exists(${SRCTOP}/mk/os.${OS_HOST}.mk)
+.include "${SRCTOP}/mk/os.${OS_HOST}.mk"
 .endif
 
 # Bring in per-subproject OS-specific Makefiles, if they exist

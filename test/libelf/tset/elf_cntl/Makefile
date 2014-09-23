@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 TS_SRCS=		cntl.m4
 TS_DATA=		a.ar
@@ -13,4 +14,4 @@ a.ar:	a.o .SILENT
 	rm -f ${.TARGET}
 	${AR} crv ${.TARGET} ${.ALLSRC} > /dev/null
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

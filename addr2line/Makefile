@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 PROG=	addr2line
 SRCS=	addr2line.c
@@ -12,4 +13,4 @@ LDADD=	-lelftc -ldwarf -lelf
 
 MAN1=	addr2line.1
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"

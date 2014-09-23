@@ -1,7 +1,8 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../..
+RELPATH=	../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 SUBDIR+=	ardiff
 SUBDIR+=	teraser
 
-.include "${TOP}/mk/elftoolchain.tetbase.mk"
+.include "${SRCTOP}/mk/elftoolchain.tetbase.mk"

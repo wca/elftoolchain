@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 PROG=	teraser
 
@@ -8,4 +9,4 @@ NOMAN=
 
 WARNS?=	6
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"

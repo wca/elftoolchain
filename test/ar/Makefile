@@ -1,7 +1,8 @@
 # $Id$
 
-TOP=		${.CURDIR}/../..
-AR=		${TOP}/ar/ar
+RELPATH=	../..
+SRCTOP=	${.CURDIR}/${RELPATH}
+AR=		${SRCTOP}/ar/ar
 
 TEST_LOG=	test.log
 
@@ -17,4 +18,4 @@ clobber:	clean
 
 SUBDIR=		plugin
 
-.include "${TOP}/mk/elftoolchain.subdir.mk"
+.include "${SRCTOP}/mk/elftoolchain.subdir.mk"

@@ -1,7 +1,8 @@
 
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 PROG=	nm
 SRCS=	nm.c
@@ -10,4 +11,4 @@ WARNS?=	6
 
 LDADD=	-ldwarf -lelftc -lelf
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"

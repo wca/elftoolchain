@@ -1,8 +1,8 @@
 # $Id$
 
-TOP=		${.CURDIR}/../../..
-SUBDIR=
+RELPATH=	../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 SUBDIR+=	elftc_string_table
 SUBDIR+=	elftc_version
 
-.include "${TOP}/mk/elftoolchain.subdir.mk"
+.include "${SRCTOP}/mk/elftoolchain.subdir.mk"

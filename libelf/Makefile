@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 LIB=	elf
 
@@ -162,4 +163,4 @@ libelf_convert.c:	elf_types.m4 libelf_convert.m4
 libelf_fsize.c:		elf_types.m4 libelf_fsize.m4
 libelf_msize.c:		elf_types.m4 libelf_msize.m4
 
-.include "${TOP}/mk/elftoolchain.lib.mk"
+.include "${SRCTOP}/mk/elftoolchain.lib.mk"

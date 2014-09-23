@@ -1,9 +1,10 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-TS_SRCS=		elf.m4
-TS_DATA=		a.ar
+TS_SRCS=	elf.m4
+TS_DATA=	a.ar
 
 CLEANFILES=	zero
 
@@ -14,4 +15,4 @@ a.ar:	zero
 	rm -f ${.TARGET}
 	ar crv ${.TARGET} ${.ALLSRC}
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

@@ -1,6 +1,7 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=	../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 TS_SRCS=	begin.m4
 TS_DATA=	check_elf.msb32 check_elf.lsb32 check_elf.msb64 \
@@ -20,4 +21,4 @@ a-bsd.ar: a.o .SILENT
 zero: .SILENT
 	rm -f ${.TARGET}; touch ${.TARGET}
 
-.include "${TOP}/mk/elftoolchain.tet.mk"
+.include "${SRCTOP}/mk/elftoolchain.tet.mk"

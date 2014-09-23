@@ -6,7 +6,8 @@
 # Keeping the build rules for program code and documentation in
 # separate Makefiles help to keep each rule set simple.
 
-TOP=		${.CURDIR}/../..
+RELPATH=	../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
 # The literate program input, in order of presentation in the
 # generated text.
@@ -34,7 +35,7 @@ SUBMAKEFILES=	documentation manuals program
 .dosubmake:	.USE
 .for rules in ${SUBMAKEFILES}
 	@${MAKE} -f Makefile.${rules} ${.TARGET} NW_SRCS="${NW_SRCS}" \
-		DOC=${DOC} TOP="${TOP}"
+		DOC=${DOC} TOP="${SRCTOP}"
 .endfor
 
 # Standard targets.
@@ -70,12 +71,12 @@ ${DOC}.tex:	 ${DOC}.pre.nw ${NW_SRCS} ${DOC}.post.nw
 # The 'index' target only applies to the documentation.
 index:
 	@${MAKE} -f Makefile.documentation ${.TARGET} NW_SRCS="${NW_SRCS}" \
-		TOP="${TOP}"
+		TOP="${SRCTOP}"
 
 # The 'test' target only applies to the programs.
 test:
 	@${MAKE} -f Makefile.program ${.TARGET} NW_SRCS="${NW_SRCS}" \
-		TOP="${TOP}"
+		TOP="${SRCTOP}"
 
 # Provide a 'clobber' target that goes beyond 'clean'.
 clobber: clean

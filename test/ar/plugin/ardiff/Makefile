@@ -1,8 +1,9 @@
 # $Id$
 
-TOP=	${.CURDIR}/../../../..
+RELPATH=../../../..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-.include "${TOP}/mk/elftoolchain.os.mk"
+.include "${SRCTOP}/mk/elftoolchain.os.mk"
 
 PROG=	ardiff
 
@@ -13,4 +14,4 @@ WARNS?=	6
 DPADD=	${LIBARCHIVE}
 LDADD=	-larchive
 
-.include "${TOP}/mk/elftoolchain.prog.mk"
+.include "${SRCTOP}/mk/elftoolchain.prog.mk"

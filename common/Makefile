@@ -1,9 +1,10 @@
 # $Id$
 
-TOP=	${.CURDIR}/..
+RELPATH=..
+SRCTOP=	${.CURDIR}/${RELPATH}
 
-INCS=		elfdefinitions.h
-INCSDIR=	/usr/include
+INCS=	elfdefinitions.h
+INCSDIR=/usr/include
 
 .PHONY:	all clean clobber depend obj
 
@@ -15,4 +16,4 @@ clean clobber:
 cleandepend:
 	rm -f .depend
 
-.include "${TOP}/mk/elftoolchain.inc.mk"
+.include "${SRCTOP}/mk/elftoolchain.inc.mk"
