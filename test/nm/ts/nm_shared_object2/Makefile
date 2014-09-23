@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	../../../..
+TOP=	${.CURDIR}/../../../..
 
 TS_DATA=	test_ko
 

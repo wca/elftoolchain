@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=		../..
+TOP=		${.CURDIR}/../..
 AR=		${TOP}/ar/ar
 
 TEST_LOG=	test.log

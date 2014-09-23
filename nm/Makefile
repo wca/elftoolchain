@@ -1,7 +1,7 @@
 
 # $Id$
 
-TOP=	..
+TOP=	${.CURDIR}/..
 
 PROG=	nm
 SRCS=	nm.c

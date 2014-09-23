@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	..
+TOP=	${.CURDIR}/..
 
 PROG=	ld
 WARNS?=	6

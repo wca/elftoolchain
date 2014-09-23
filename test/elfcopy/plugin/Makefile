@@ -1,17 +1,7 @@
 # $Id$
 
-PLUGINS=	ardiff teraser
+TOP=	${.CURDIR}/../../..
+SUBDIR+=	ardiff
+SUBDIR+=	teraser
 
-all:	${PLUGINS}
-
-${PLUGINS}:
-.for plugin in ${.TARGET}
-	${MAKE} -f Makefile.${plugin}
-.endfor
-
-clean cleandepend depend:
-.for plugin in ${PLUGINS}
-	${MAKE} -f Makefile.${plugin} ${.TARGET}
-.endfor
-
-.include <bsd.obj.mk>
+.include "${TOP}/mk/elftoolchain.tetbase.mk"

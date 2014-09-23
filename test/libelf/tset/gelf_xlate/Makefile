@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	../../../..
+TOP=	${.CURDIR}/../../../..
 
 TS_SRCS=		xlate.m4
 TS_YAML=		xlate

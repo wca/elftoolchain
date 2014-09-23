@@ -4,7 +4,7 @@
 # $Id$
 #
 
-TOP=	../..
+TOP=	${.CURDIR}/../..
 
 .include "${TOP}/mk/elftoolchain.tetvars.mk"
 
@@ -57,7 +57,7 @@ all depend test:	.SILENT
 	echo "	${TET_DOWNLOAD_URL}"
 	echo "and unpack it into directory \"${TET_ROOT}\"."
 	echo
-	false
+	echo "Otherwise, the tests cannot be run."
 
 clean clobber:
 	rm -f ${TET_BUILD_MARKER} ${TET_PATCH_MARKER}

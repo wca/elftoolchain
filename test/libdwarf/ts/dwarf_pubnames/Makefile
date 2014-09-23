@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	../../../..
+TOP=	${.CURDIR}/../../../..
 
 TS_SRCS=	dwarf_pubnames.c
 TS_DATA=	dt32-g1 ec64-g1

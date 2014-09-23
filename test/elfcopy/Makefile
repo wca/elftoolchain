@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=		../..
+TOP=		${.CURDIR}/../..
 
 ELFCOPY=	${TOP}/elfcopy/elfcopy
 

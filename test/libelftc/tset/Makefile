@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=		../../..
+TOP=		${.CURDIR}/../../..
 SUBDIR=
 SUBDIR+=	elftc_string_table
 SUBDIR+=	elftc_version

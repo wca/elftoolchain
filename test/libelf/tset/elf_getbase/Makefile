@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	../../../..
+TOP=	${.CURDIR}/../../../..
 
 TS_SRCS=		getbase.m4
 

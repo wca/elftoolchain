@@ -2,7 +2,7 @@
 # $Id$
 #
 
-TOP=		../../..
+TOP=		${.CURDIR}/../../..
 
 SUBDIR+=	dwarf_init
 SUBDIR+=	dwarf_next_cu_header

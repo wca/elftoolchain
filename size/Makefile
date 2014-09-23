@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	..
+TOP=	${.CURDIR}/..
 
 PROG=   size
 WARNS?= 6

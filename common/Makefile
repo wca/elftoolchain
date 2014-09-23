@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	..
+TOP=	${.CURDIR}/..
 
 INCS=		elfdefinitions.h
 INCSDIR=	/usr/include

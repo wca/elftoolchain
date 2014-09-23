@@ -1,5 +1,5 @@
 # $Id$
 
-TOP=		../..
+TOP=		${.CURDIR}/../..
 
 .include "${TOP}/mk/elftoolchain.tetbase.mk"

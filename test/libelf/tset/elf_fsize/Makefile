@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	../../../..
+TOP=	${.CURDIR}/../../../..
 
 TS_SRCS=		fsize.m4
 TS_DATA=		fsize.msb32 fsize.msb64

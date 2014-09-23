@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	..
+TOP=	${.CURDIR}/..
 
 PROG=	ar
 SRCS=	ar.c read.c util.c write.c

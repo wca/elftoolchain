@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	../../../..
+TOP=	${.CURDIR}/../../../..
 
 TS_SRCS=		update.m4
 TS_YAML=		newehdr newscn newscn2 rdwr rdwr1 rdwr2 u1

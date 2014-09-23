@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=		../../..
+TOP=		${.CURDIR}/../../..
 
 SUBDIR+=	nm_archive1
 SUBDIR+=	nm_archive2

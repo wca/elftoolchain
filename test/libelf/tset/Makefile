@@ -2,7 +2,7 @@
 # $Id$
 #
 
-TOP=		../../..
+TOP=		${.CURDIR}/../../..
 
 SUBDIR+=	common		# must be first
 

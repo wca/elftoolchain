@@ -6,7 +6,7 @@
 # Keeping the build rules for program code and documentation in
 # separate Makefiles help to keep each rule set simple.
 
-TOP=		../..
+TOP=		${.CURDIR}/../..
 
 # The literate program input, in order of presentation in the
 # generated text.

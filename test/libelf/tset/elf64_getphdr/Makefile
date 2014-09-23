@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	../../../..
+TOP=	${.CURDIR}/../../../..
 
 TS_SRCS=		phdr.m4
 TS_DATA=		ehdr.lsb64 ehdr.msb64 \

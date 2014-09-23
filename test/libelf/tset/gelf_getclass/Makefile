@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	../../../..
+TOP=	${.CURDIR}/../../../..
 
 TS_SRCS=		getclass.m4
 TS_DATA=		getclass.msb32 getclass.msb64

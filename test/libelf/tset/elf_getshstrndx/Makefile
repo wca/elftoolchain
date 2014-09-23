@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	../../../..
+TOP=	${.CURDIR}/../../../..
 
 TS_SRCS=		getshstrndx.m4
 TS_YAML=		newscn xscn-1 xscn-2 xscn-3

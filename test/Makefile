@@ -3,7 +3,7 @@
 # TET-based test suites used by the Elftoolchain project.
 #
 
-TOP=		..
+TOP=		${.CURDIR}/..
 
 # Build TET first.
 SUBDIR+=	tet

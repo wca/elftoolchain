@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=	../../../..
+TOP=	${.CURDIR}/../../../..
 
 TS_SRCS=	dwarf_ranges.c
 TS_DATA=	dt32-g1 ec64-g1

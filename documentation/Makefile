@@ -1,6 +1,6 @@
 # $Id$
 
-TOP=		..
+TOP=		${.CURDIR}/..
 
 SUBDIR=		libelf-by-example
 
