@@ -11,9 +11,10 @@ YSRC=	acpyacc.y
 WARNS?=	5
 
 DPADD=	${LIBARCHIVE} ${LIBELFTC} ${LIBELF}
-LDADD=	-larchive -lelftc -lelf
+LDADD=	-larchive -lelftc -lelf -lz
 
 CFLAGS+=-I. -I${.CURDIR}
+CFLAGS+=-Wno-error=deprecated-declarations
 
 LINKS=	${BINDIR}/ar ${BINDIR}/ranlib
 

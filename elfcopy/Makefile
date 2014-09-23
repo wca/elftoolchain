@@ -13,7 +13,7 @@ DPADD=	${LIBELF} ${LIBELFTC}
 LDADD=	-lelf -lelftc
 
 .if !defined(LIBELF_AR)
-LDADD+= -larchive
+LDADD+= -larchive -lz
 .endif
 
 MAN=	elfcopy.1 mcs.1 strip.1
@@ -35,6 +35,8 @@ ${EXTRA_TARGETS}:	${PROG}
 	ln -s ${PROG} ${.TARGET}
 
 .include "${SRCTOP}/mk/elftoolchain.prog.mk"
+
+CFLAGS+=-Wno-error=deprecated-declarations
 
 .if ${OS_HOST} == "OpenBSD"
 CFLAGS+=	-I/usr/local/include
