@@ -30,7 +30,7 @@ ${TET_BUILD_MARKER}: ${TET_PATCH_MARKER}
 	touch ${TET_BUILD_MARKER}
 
 ${TET_PATCH_MARKER}:
-	for f in patches/*.patch; do	\
+	for f in ${.CURDIR}/patches/*.patch; do	\
 		patch -p0 < $${f};	\
 	done
 	touch ${TET_PATCH_MARKER}
@@ -55,10 +55,26 @@ all depend test:	.SILENT
 	echo "ERROR: The distribution of TET v${TET_VERSION} is missing."
 	echo
 	echo "Please download the distribution from:"
-	echo "	${TET_DOWNLOAD_URL}"
+	echo "	${TET_URL}"
 	echo "and unpack it into directory \"${TET_ROOT}\"."
 	echo
+	echo "You can run 'make fetch extract' from ${.CURDIR} to do this."
+	echo
 	echo "Otherwise, the tests cannot be run."
+
+fetch: ${SRCTOP}/${TET_FILE}
+	@true
+
+extract: ${TET_ROOT}/.extracted
+	@true
+
+${SRCTOP}/${TET_FILE}:
+	fetch -o ${SRCTOP}/${TET_FILE} ${TET_URL}
+
+${TET_ROOT}/.extracted: ${SRCTOP}/${TET_FILE}
+	mkdir -p ${TET_ROOT}
+	tar -C ${TET_ROOT} --strip-components=1 -xvf ${SRCTOP}/${TET_FILE}
+	@touch ${TET_ROOT}/.extracted
 
 clean clobber:
 	rm -f ${TET_BUILD_MARKER} ${TET_PATCH_MARKER}
