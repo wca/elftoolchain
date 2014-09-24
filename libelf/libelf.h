@@ -31,7 +31,12 @@
 
 #include <sys/types.h>
 
+#ifdef __FreeBSD__
+#include <sys/elf32.h>
+#include <sys/elf64.h>
+#else
 #include <elfdefinitions.h>
+#endif
 
 /* Library private data structures */
 typedef struct _Elf Elf;
