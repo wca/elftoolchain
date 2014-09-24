@@ -36,12 +36,10 @@ ic_count.c:
 	${TS_ROOT}/bin/count-ic ${.OBJDIR}
 .endif
 
-.for f in ${TS_DATA}
-CLEANFILES+=	${f}.xml
-.endfor
-
 # Copy test objects(binaries) to the build directory uncompressed.
 .for f in ${TS_DATA}
+CLEANFILES+=	${f}
+
 ${f}: ${.CURDIR}/../common/object/${f}.gz
 	gzcat ${.ALLSRC} > ${f}
 .endfor
