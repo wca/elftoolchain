@@ -160,8 +160,13 @@ dwarf_attrval_unsigned(Dwarf_Die die, Dwarf_Half attr, Dwarf_Unsigned *valp, Dwa
 	}
 
 	die1 = NULL;
-	if (at == NULL &&
-	    (at = _dwarf_attr_find(die, DW_AT_abstract_origin)) != NULL) {
+	if (at == NULL) {
+		at = _dwarf_attr_find(die, DW_AT_abstract_origin);
+		if (at == NULL) {
+			/* XXX what's the right error here? */
+			DWARF_SET_ERROR(dbg, err, DW_DLE_NO_ENTRY);
+			return (DW_DLV_NO_ENTRY);
+		}
 		switch (at->at_form) {
 		case DW_FORM_ref1:
 		case DW_FORM_ref2:
