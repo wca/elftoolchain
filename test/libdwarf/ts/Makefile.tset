@@ -27,23 +27,23 @@ LDADD+=		-lexpat
 .endif
 
 .if !defined(TCGEN)
-TS_SRCS+=	${.OBJDIR}/ic_count.c
-${.OBJDIR}/ic_count.c:
+.PATH:	${.OBJDIR}
+
+TS_SRCS+=	ic_count.c
+CLEANFILES+=	ic_count.c
+
+ic_count.c:
 	${TS_ROOT}/bin/count-ic ${.OBJDIR}
-CLEANFILES+=	 ${.OBJDIR}/ic_count.c
 .endif
 
 .for f in ${TS_DATA}
 CLEANFILES+=	${f}.xml
 .endfor
 
-# Copy test objects(binaries) to the build directory.
+# Copy test objects(binaries) to the build directory uncompressed.
 .for f in ${TS_DATA}
-.if !exists(${f:R})
-${f}:	${TS_OBJROOT}/common/object/${f}.gz
-	cp ${.ALLSRC} ${.TARGET}.gz
-	gunzip ${.TARGET}.gz
-.endif
+${f}: ${.CURDIR}/../common/object/${f}.gz
+	gzcat ${.ALLSRC} > ${f}
 .endfor
 
 # NetBSD turns on -Wstrict-prototypes for WARNS>0; however
