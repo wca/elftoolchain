@@ -25,7 +25,7 @@ all: ${TET_BUILD_MARKER}
 
 ${TET_BUILD_MARKER}: ${TET_PATCH_MARKER}
 	cd ${TET_ROOT} && sh ./configure -t lite
-	cd ${TET_ROOT}/src && ${MAKE} all install
+	cd ${TET_ROOT}/src && ${MAKE} -j1 all install
 	touch ${TET_BUILD_MARKER}
 
 ${TET_PATCH_MARKER}: ${TET_EXTRACT_MARKER}
