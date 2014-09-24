@@ -26,6 +26,7 @@ CFLAGS+=	-I${TET_ROOT}/inc/tet3 -I${TS_ROOT}/common
 
 .if defined(TS_SRCS)
 PROG=		tc_${.CURDIR:T:R}
+MAN=
 
 _C_SRCS=	${TS_SRCS:M*.c}
 _M4_SRCS=	${TS_SRCS:M*.m4}
@@ -59,6 +60,6 @@ M4FLAGS+=	-I${TS_ROOT}/common -I${TS_BASE}/common
 LDADD+=		${TET_OBJS} -L${TET_LIBS} -lapi
 CLEANFILES+=	tet_xres tet_captured
 
-ELFTOOLCHAIN_AR=	${SRCTOP}/ar/ar
+ELFTOOLCHAIN_AR=	${OBJTOP}/ar/ar
 
 .include "${SRCTOP}/mk/elftoolchain.prog.mk"
