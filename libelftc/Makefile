@@ -57,10 +57,10 @@ MLINKS=	elftc_bfd_find_target.3 elftc_bfd_target_byteorder.3 \
 	elftc_symbol_table_create.3 elftc_symbol_table_lookup.3 \
 	elftc_symbol_table_create.3 elftc_symbol_table_to_image.3
 
-.if	!make(clean) && !make(clobber)
-.BEGIN:	.SILENT
+.PATH: ${.OBJDIR}
+
+elftc_version.c: make-toolchain-version
 	${.CURDIR}/make-toolchain-version -t ${SRCTOP} -r ${RELEASE} \
-	    -h ${OS_HOST}
-.endif
+	    -h ${OS_HOST} -o ${.OBJDIR}/elftc_version.c
 
 .include "${SRCTOP}/mk/elftoolchain.lib.mk"
