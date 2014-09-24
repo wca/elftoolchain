@@ -43,6 +43,7 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+#include <stdint.h>
 
 #include "_elftc.h"
 

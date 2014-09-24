@@ -31,6 +31,7 @@
 #include <libelf.h>
 #include <limits.h>
 #include <string.h>
+#include <stdint.h>
 
 #include "_libelf.h"
 

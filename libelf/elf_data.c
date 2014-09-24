@@ -28,6 +28,7 @@
 #include <errno.h>
 #include <libelf.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 #include "_libelf.h"
 

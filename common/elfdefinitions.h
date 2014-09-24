@@ -40,8 +40,6 @@
 #ifndef _ELFDEFINITIONS_H_
 #define _ELFDEFINITIONS_H_
 
-#include <stdint.h>
-
 /*
  * Types of capabilities.
  */
